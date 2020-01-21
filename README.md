@@ -3,8 +3,8 @@
 ### 目录
 
 * [L1-001 Hello World (5分)](#L1-001-Hello-World)
-* [L1-010 比较大小 (10分)](#L1-010-比较大小)
 * [L1-002 打印沙漏(20分)](#L1-002-打印沙漏)
+* [L1-010 比较大小 (10分)](#L1-010-比较大小)
 * [L1-011 A-B (20分)](#L1-011-A减B)
 * [L1-012 计算指数 (5分)](#L1-012-计算指数)
 
@@ -41,70 +41,6 @@ int main(void)
 
 
 ------
-
-
-
-### L1 010 比较大小
-
-本题要求将输入的任意3个整数从小到大输出。
-
-#### 输入格式:
-
-输入在一行中给出3个整数，其间以空格分隔。
-
-#### 输出格式:
-
-在一行中将3个整数从小到大输出，其间以“->”相连。
-
-#### 输入样例:
-
-```in
-4 2 8
-```
-
-#### 输出样例:
-
-```out
-2->4->8
-```
-#### My Solution:
-
-```c++
-#include <iostream>
-using namespace std;
-
-void InsertionSort(long long arr[], int len)
-{
-	long long key;
-	
-	for (int i = 1; i < len; i++) {
-		key = arr[i];
-		int j = i-1;
-		while (arr[j] > key && j >= 0) {
-			arr[j+1] = arr[j];
-			j--;
-		}
-		arr[j+1] = key;
-	}
-}
-
-int main(void)
-{
-	long long arr[3];
-	
-	cin >> arr[0] >> arr[1] >> arr[2];
-	InsertionSort(arr, 3);
-	cout << arr[0] << "->" << arr[1] << "->" << arr[2];
-	
-	
-	return 0;
-}
-```
-
-
-
-------
-
 
 
 ### L1 002 打印沙漏
@@ -201,6 +137,70 @@ int main(void)
 
 
 ------
+
+
+
+### L1 010 比较大小
+
+本题要求将输入的任意3个整数从小到大输出。
+
+#### 输入格式:
+
+输入在一行中给出3个整数，其间以空格分隔。
+
+#### 输出格式:
+
+在一行中将3个整数从小到大输出，其间以“->”相连。
+
+#### 输入样例:
+
+```in
+4 2 8
+```
+
+#### 输出样例:
+
+```out
+2->4->8
+```
+#### My Solution:
+
+```c++
+#include <iostream>
+using namespace std;
+
+void InsertionSort(long long arr[], int len)
+{
+	long long key;
+	
+	for (int i = 1; i < len; i++) {
+		key = arr[i];
+		int j = i-1;
+		while (arr[j] > key && j >= 0) {
+			arr[j+1] = arr[j];
+			j--;
+		}
+		arr[j+1] = key;
+	}
+}
+
+int main(void)
+{
+	long long arr[3];
+	
+	cin >> arr[0] >> arr[1] >> arr[2];
+	InsertionSort(arr, 3);
+	cout << arr[0] << "->" << arr[1] << "->" << arr[2];
+	
+	
+	return 0;
+}
+```
+
+
+
+------
+
 
 
 
