@@ -1,7 +1,8 @@
 ## GPLT_Problem_Set
 
-[TOC]
-
+### 目录
+* [L1-001 Hello World](#L1-001-Hello-World)
+* [L1-010 比较大小](#L1-010-比较大小)
 
 
 ### L1-001 Hello World (5分)
