@@ -3,11 +3,9 @@
 ### 目录
 
 * [L1-001 Hello World (5分)](#L1-001-Hello-World)
-
 * [L1-010 比较大小 (10分)](#L1-010-比较大小)
-
 * [L1-002 打印沙漏(20分)](#L1-002-打印沙漏)
-
+* [L1-011 A-B (20分)](#L1-011-A减B)
 
 ### L1 001 Hello World
 
@@ -203,5 +201,76 @@ int main(void)
 
 ------
 
+
+
+### L1 011 A减B
+
+本题要求你计算*A*−*B*。不过麻烦的是，*A*和*B*都是字符串 —— 即从字符串*A*中把字符串*B*所包含的字符全删掉，剩下的字符组成的就是字符串*A*−*B*。
+
+#### 输入格式：
+
+输入在2行中先后给出字符串*A*和*B*。两字符串的长度都不超过104，并且保证每个字符串都是由可见的ASCII码和空白字符组成，最后以换行符结束。
+
+#### 输出格式：
+
+在一行中打印出*A*−*B*的结果字符串。
+
+#### 输入样例：
+
+```in
+I love GPLT!  It's a fun game!
+aeiou
+```
+
+### 输出样例：
+
+```out
+I lv GPLT!  It's  fn gm!
+```
+### My Solution:
+```c++
+#include <cstdio>
+#include <cstring>
+using namespace std;
+
+void solve(char A[], char B[])
+{
+	int lenA = strlen(A);
+	int lenB = strlen(B);
+	
+	for (int i = 0; i < lenB; i++) {
+		for (int j = 0; j < lenA; j++) {
+			if (A[j] == '\n') {
+				continue;
+			}
+			if (A[j] == B[i]) {
+				A[j] = '\n';
+			}
+		}
+	}
+	
+	for (int i = 0; i < lenA; i++) {
+		if (A[i] != '\n') {
+			printf("%c", A[i]);
+		}
+	}
+}
+
+int main(void)
+{
+	char A[10005];
+	char B[10005];
+	
+	scanf("%[^\n]%*c", A);
+	scanf("%[^\n]%*c", B);
+	solve(A, B);
+	
+	return 0;
+}
+```
+
+
+
+------
 
 
